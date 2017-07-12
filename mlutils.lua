@@ -6,7 +6,7 @@ Alireza Goudarzi, <alireza.goudarzi@gmail.com>
 ]]
 
 
-require 'mlutilinit'
+require 'mlutilinit.lua'
 
 function mlutils.cov(x)
     means = x:mean(1);
@@ -14,7 +14,7 @@ function mlutils.cov(x)
     covs = (cx:t()*cx)
     return covs;
 end
-function corr(x,y)
+function mlutils.corr(x,y)
     local y = y or x;
     xmeans = x:mean(1);
     ymeans = y:mean(1);
