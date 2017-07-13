@@ -33,7 +33,7 @@ dependencies = {
 build = {
    type = "builtin",
    modules = {
-      init = "mlutilinit.lua",
+      mlutilinit = "mlutilinit.lua",
       mlutils = "mlutils.lua",
       
    }

@@ -6,7 +6,7 @@ Alireza Goudarzi, <alireza.goudarzi@gmail.com>
 ]]
 
 
-require 'mlutilinit.lua'
+require 'mlutilinit.mlutilinit'
 
 function mlutils.cov(x)
     means = x:mean(1);
