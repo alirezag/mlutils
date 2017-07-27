@@ -45,7 +45,7 @@ function ml.normalize(w,d)
         if vd==1 then 
             local norms = mlutils.norm(w:t());
             for ni=1,w:size(1) do 
-                w[ni]:div(norms[1][ni]);
+                w[{{ni},{}}]:div(norms[1][ni]);
             end   
         elseif vd==2 then 
             local norms = mlutils.norm(w);
