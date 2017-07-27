@@ -34,3 +34,27 @@ function mlutils.norm(x,l)
     local vl = l or 2;
     return (torch.pow(x,vl):sum(1):pow(1/vl));
 end   
+
+function ml.normalize(w,d)
+    local vd = d or 1;
+
+    if w:dim() == 1 then 
+        w:div(mlutils.norm(w));
+       
+    elseif w:dim() == 2 then 
+        if vd==1 then 
+            local norms = mlutils.norm(w:t());
+            for ni=1,w:size(1) do 
+                w[ni]:div(norms[1][ni]);
+            end   
+        elseif vd==2 then 
+            local norms = mlutils.norm(w);
+            for ni=1,w:size(2) do 
+                w[{{},{ni}}]:div(norms[1][ni]);
+            end
+        end
+    end
+    return w;
+end 
+
+return mlutils;
